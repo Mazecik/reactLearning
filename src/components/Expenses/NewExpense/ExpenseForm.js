@@ -88,6 +88,7 @@ const ExpenseForm = (props) => {
                 </div>
             </div>
             <div className="new-expense__control">
+                <button onClick={props.hideForm}>Close</button>
                 <button type="submit">Add Expense</button>
             </div>
         </form>
