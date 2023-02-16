@@ -1,11 +1,12 @@
 import logo from "./logo.svg";
 import "./App.css";
+import { useState } from "react";
 
 import NewExpense from "./components/Expenses/NewExpense/NewExpense";
 import Expenses from "./components/Expenses/Expenses";
 
 const App = () => {
-  const expenses = [
+  const Dummyexpenses = [
     {
       id: "e1",
       title: "Naprawa samochodu",
@@ -25,10 +26,14 @@ const App = () => {
       date: new Date(2023, 2, 6),
     },
   ];
+  const [expenses, setExpenses] = useState(Dummyexpenses);
 
   const addExpenseHandler = expense => {
-    console.log('In App.js');
     console.log(expense);
+    setExpenses([
+      expense,
+      ...expenses
+    ])
   };
 
   return (
